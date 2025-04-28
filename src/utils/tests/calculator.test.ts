@@ -39,4 +39,9 @@ describe('String Calculator', () => {
     expect(add("//;\\n1;2;3")).toBe(6);
     expect(add("//,\\n1,2,3")).toBe(6);
   });
+
+  it('should handle literal \\n characters in number input as newline delimiters', () => {
+    expect(add("1\\n2,3")).toBe(6);
+    expect(add("7\\n2\\n1")).toBe(10);
+  });
 });
