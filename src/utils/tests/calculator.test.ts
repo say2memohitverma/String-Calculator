@@ -34,4 +34,9 @@ describe('String Calculator', () => {
     expect(() => add("-1,2")).toThrow("negative numbers not allowed: -1");
     expect(() => add("1,-2,-3")).toThrow("negative numbers not allowed: -2,-3");
   });
+
+  it('should handle literal \\n characters in custom delimiter notation', () => {
+    expect(add("//;\\n1;2;3")).toBe(6);
+    expect(add("//,\\n1,2,3")).toBe(6);
+  });
 });
