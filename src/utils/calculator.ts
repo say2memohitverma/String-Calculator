@@ -17,14 +17,11 @@ export function add(numbers: string): number {
       
       const newlineLength = delimiterEndLiteral !== -1 ? 2 : 1;
       numbersString = numbers.substring(delimiterEnd + newlineLength);
-      
-      if (delimiterEndLiteral !== -1) {
-        numbersString = numbersString.replace(/\\n/g, "\n");
-      }
     }
   }
   
-  const normalizedInput = numbersString.replace(/\n/g, delimiter);
+  let normalizedInput = numbersString.replace(/\\n/g, delimiter);
+  normalizedInput = normalizedInput.replace(/\n/g, delimiter);
   
   const nums = normalizedInput.split(delimiter).map(n => parseInt(n, 10));
   
