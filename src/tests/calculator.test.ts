@@ -14,4 +14,9 @@ describe('String Calculator', () => {
     expect(add("1,5")).toBe(6);
     expect(add("10,20")).toBe(30);
   });
+
+  it('should handle multiple numbers', () => {
+    expect(add("1,2,3,4,5")).toBe(15);
+    expect(add("10,20,30,40")).toBe(100);
+  });
 });
